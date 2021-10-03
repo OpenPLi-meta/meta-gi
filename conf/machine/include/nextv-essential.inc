@@ -1,6 +1,6 @@
 MACHINE_ESSENTIAL_EXTRA_RRECOMMENDS = "\
 	kernel-module-cdfs \
-	${@bb.utils.contains('MACHINE_FEATURES', 'v3d-nxclient', 'nextv-v3ddriver-${MACHINE}' , '', d)} \
+	${@bb.utils.contains('MACHINE_FEATURES', 'nextv-cortexa15', 'nextv-v3ddriver-${MACHINE}' , '', d)} \
 	\
 	firmware-rtl8192eu \
 	firmware-rtl8188eu \
