@@ -37,8 +37,6 @@ MACHINE_EXTRA_RRECOMMENDS = " \
 	ntfs-3g \
 	"
 
-EXTRA_OECMAKE_append_pn-kodi += " -DWITH_V3D=nxclient"
-
 PACKAGECONFIG_GL_pn-qtbase = " "
 PACKAGECONFIG_append_pn-qtbase += " gles2 linuxfb"
 
