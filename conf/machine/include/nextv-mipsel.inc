@@ -9,7 +9,7 @@ UBI_VOLNAME = "rootfs"
 TARGET_ARCH = "mipsel"
 DEFAULTTUNE ?= "mips32el"
 
-require conf/machine/include/tune-mips32.inc
+require conf/machine/include/mips/tune-mips32.inc
 
 # We know about rtc
 MACHINE_FEATURES_BACKFILL_CONSIDERED = "rtc"
@@ -30,7 +30,7 @@ MACHINE_EXTRA_RRECOMMENDS = " \
 	ntfs-3g \
 	"
 
-DVBMEDIASINK_CONFIG_mipsel = "--with-wma --with-wmv --with-pcm --with-dts --with-eac3 \
+DVBMEDIASINK_CONFIG:mipsel = "--with-wma --with-wmv --with-pcm --with-dts --with-eac3 \
 	${@bb.utils.contains('MACHINE_FEATURES', 'h265', '--with-h265 --with-vb6 --with-vb8 --with-spark' , '', d)} \
 	"
 
@@ -41,12 +41,12 @@ IMAGEDIR ?= "${MACHINE}"
 IMGDEPLOYDIR ?= "${DEPLOY_DIR_IMAGE}"
 
 # MIPSEL
-IMAGE_CMD_ubifs_prepend_mipsel = " \
+IMAGE_CMD:ubifs:prepend:mipsel = " \
     rm -Rf ${IMAGE_ROOTFS}/boot/*; \
     rm -Rf ${IMAGE_ROOTFS}/tmp/*; \
     "
 
-IMAGE_CMD_ubi_append_mipsel = " \
+IMAGE_CMD:ubi:append:mipsel = " \
 	mkdir -p ${IMGDEPLOYDIR}/${IMAGEDIR}; \
 	cp ${IMGDEPLOYDIR}/${IMAGE_NAME}.rootfs.ubi ${IMGDEPLOYDIR}/${IMAGEDIR}/rootfs.bin; \
 	gzip -9c ${DEPLOY_DIR_IMAGE}/vmlinux-${MACHINE}.bin > ${IMGDEPLOYDIR}/${IMAGEDIR}/kernel.bin; \

@@ -8,10 +8,10 @@ PACKAGE_ARCH := "${MACHINE_ARCH}"
 require conf/license/license-gplv2.inc
 
 PR = "r1"
-ALLOW_EMPTY_${PN} = "1"
+ALLOW_EMPTY:${PN} = "1"
 
 SRC_URI = "http://source.mynonpublic.com/xtrend/vmlinuz-initrd-${MACHINE}-${SRCDATE}.zip"
 
-FILES_${PN} = "/boot"
+FILES:${PN} = "/boot"
 
 S = "${WORKDIR}"

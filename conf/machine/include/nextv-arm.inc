@@ -13,7 +13,7 @@ KERNEL_MODULE_AUTOLOAD += "xfs"
 # We know about rtc
 MACHINE_FEATURES_BACKFILL_CONSIDERED = "rtc"
 
-IMAGE_INSTALL_append += "\
+IMAGE_INSTALL:append += "\
     nextv-initrd-${MACHINE} \
     "
 
@@ -37,8 +37,8 @@ MACHINE_EXTRA_RRECOMMENDS = " \
 	ntfs-3g \
 	"
 
-PACKAGECONFIG_GL_pn-qtbase = " "
-PACKAGECONFIG_append_pn-qtbase += " gles2 linuxfb"
+PACKAGECONFIG_GL:pn-qtbase = " "
+PACKAGECONFIG:append:pn-qtbase += " gles2 linuxfb"
 
 DVBMEDIASINK_CONFIG = "--with-h265 --with-vb8 --with-vb9 --with-wma --with-wmv --with-pcm --with-dts --with-eac3"
 
@@ -48,7 +48,7 @@ IMAGEVERSION[vardepsexclude] = "DATE"
 IMAGEDIR ?= "${MACHINE}"
 IMGDEPLOYDIR ?= "${DEPLOY_DIR_IMAGE}"
 
-IMAGE_CMD_tar_prepend = "\
+IMAGE_CMD:tar:prepend = "\
     mkdir -p ${DEPLOY_DIR_IMAGE}/${IMAGEDIR}; \
     cp ${IMAGE_ROOTFS}/boot/update.bin ${DEPLOY_DIR_IMAGE}/${IMAGEDIR}/update.bin; \
     cp ${DEPLOY_DIR_IMAGE}/zImage ${DEPLOY_DIR_IMAGE}/${IMAGEDIR}/${KERNEL_FILE}; \
