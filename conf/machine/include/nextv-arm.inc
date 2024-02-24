@@ -13,7 +13,7 @@ KERNEL_MODULE_AUTOLOAD += "xfs"
 # We know about rtc
 MACHINE_FEATURES_BACKFILL_CONSIDERED = "rtc"
 
-IMAGE_INSTALL:append += "\
+IMAGE_INSTALL:append = "\
     nextv-initrd-${MACHINE} \
     "
 
@@ -38,7 +38,7 @@ MACHINE_EXTRA_RRECOMMENDS = " \
 	"
 
 PACKAGECONFIG_GL:pn-qtbase = " "
-PACKAGECONFIG:append:pn-qtbase += " gles2 linuxfb"
+PACKAGECONFIG:append:pn-qtbase = " gles2 linuxfb"
 
 DVBMEDIASINK_CONFIG = "--with-h265 --with-vb8 --with-vb9 --with-wma --with-wmv --with-pcm --with-dts --with-eac3"
 
