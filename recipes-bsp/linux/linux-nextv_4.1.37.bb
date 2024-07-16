@@ -38,6 +38,7 @@ SRC_URI += "http://source.mynonpublic.com/xtrend/linux-${PV}-${SRC}.tar.xz \
     file://0002-log2-give-up-on-gcc-constant-optimizations.patch \
     file://0003-dont-mark-register-as-const.patch \
     file://make-yyloc-declaration-extern.patch \
+    file://fix-build-binutils241.patch \
     "
 
 S = "${WORKDIR}/linux-${PV}"
