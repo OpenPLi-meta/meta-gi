@@ -20,7 +20,7 @@ MACHINE_KERNEL_PR:append = ".8"
 RPROVIDES:${KERNEL_PACKAGE_NAME}-base = "kernel-${KERNEL_VERSION}"
 RPROVIDES:${KERNEL_PACKAGE_NAME}-image = "kernel-image-${KERNEL_VERSION}"
 
-SRC_URI += "http://source.mynonpublic.com/xtrend/linux-${PV}.tar.xz \
+SRC_URI += "http://downloads.openpli.org/archive/gi/linux-${PV}.tar.xz \
 	file://0002-log2-give-up-on-gcc-constant-optimizations.patch \
 	file://0003-dont-mark-register-as-const.patch \
 	file://defconfig \
